@@ -11,5 +11,5 @@ Most of the projects have their file as
 - MainWindow.xaml
 - MainWindow.cs
 
-> [!IMPORTANT]
+> [!Note]
 > This document is for the version **BETA 0.0.1**
