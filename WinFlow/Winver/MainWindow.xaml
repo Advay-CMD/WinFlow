@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="Winver.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Winver">
+
+    <Window.SystemBackdrop>
+        <DesktopAcrylicBackdrop />
+    </Window.SystemBackdrop>
+
+    <Grid Background="Transparent" RowSpacing="20" Margin="12">
+
+        <!-- Top selector -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="10,10,10,0">
+            <SelectorBar SelectionChanged="SelectorBar1_SelectionChanged">
+                <SelectorBarItem Text="Version" Tag="Version" IsSelected="True"/>
+                <SelectorBarItem Text="Resources" Tag="Resources"/>
+                <SelectorBarItem Text="Storage" Tag="Storage" IsEnabled="True"/>
+                <SelectorBarItem Text="About" Tag="About"/>
+            </SelectorBar>
+        </StackPanel>
+
+        <!-- CONTENT -->
+        <Grid Grid.Row="1">
+
+            <!-- VERSION TAB -->
+            <Grid x:Name="Version" Tag="Version" Visibility="Visible">
+
+                <!-- OUTER GRID -->
+                <Grid RowSpacing="16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- LOGO -->
+                    <Image
+                    x:Name="WinverLogo"
+                    Grid.Row="0"
+                    Height="40"
+                    Width="360"
+                    Stretch="Uniform"
+                    HorizontalAlignment="Center"
+                    Source="/Assets/winlogo4.png"/>
+
+                    <!-- INFO CARD -->
+                    <Border
+                    Grid.Row="1"
+                    Background="{ThemeResource SystemFillColorNeutralBackground}"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="0"
+                    CornerRadius="20"
+                    Padding="16"
+                    Width="444"
+                    HorizontalAlignment="Left">
+
+                        <Grid RowSpacing="6" ColumnSpacing="12">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                                <!-- TITLE ROW -->
+                            <StackPanel Orientation="Horizontal" Spacing="8" Grid.Row="0">
+                                <FontIcon
+                                Glyph="&#xF167;"
+                                FontSize="15"
+                                Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
+
+                                <TextBlock
+                                x:Name="WinverProductName"
+                                Text="Microsoft Windows"
+                                FontSize="12"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"/>
+                            </StackPanel>
+
+                            <!-- Product -->
+                            <TextBlock
+                            x:Name="ProductName"
+                            Grid.Row="1"
+                            Text="Sorry, but failed to get product!"
+                            FontSize="10"
+                            Opacity="0.75"
+                            Margin="26,0,0,0"
+                            TextWrapping="WrapWholeWords"
+                            IsTextSelectionEnabled="True"
+                            SelectionHighlightColor="DarkCyan"/>
+
+                            <!-- BUILD -->
+                            <TextBlock
+                            x:Name="WinverBuildInfo"
+                            Grid.Row="2"
+                            Text="Sorry, but failed to get build!"
+                            FontSize="10"
+                            Opacity="0.75"
+                            Margin="26,0,0,0"
+                            TextWrapping="WrapWholeWords"
+                            IsTextSelectionEnabled="True"
+                            SelectionHighlightColor="DarkCyan"/>
+
+                            <!-- Activation -->
+                            <TextBlock
+                            x:Name="ActivationStatus"
+                            Grid.Row="3"
+                            Text="Sorry, but failed to get activation status!"
+                            FontSize="10"
+                            Opacity="0.75"
+                            Margin="26,0,0,0"
+                            TextWrapping="WrapWholeWords"
+                            IsTextSelectionEnabled="True"
+                            SelectionHighlightColor="Red"/>
+
+                            <!-- InstalledOn -->
+                            <TextBlock
+                            x:Name="InstalledOn"
+                            Grid.Row="4"
+                            Text="Sorry, but failed to get Installed on date!"
+                            FontSize="10"
+                            Opacity="0.75"
+                            Margin="26,0,0,0"
+                            TextWrapping="WrapWholeWords"
+                            IsTextSelectionEnabled="True"
+                            SelectionHighlightColor="DarkCyan"/>
+
+                        </Grid>
+                    </Border>
+                    <Button
+                        Margin="0,0,0,0"
+                        Height="130"
+                        Width="120"
+                        Padding="16"
+                        Click="CPU_Click"
+                        Background="{ThemeResource SystemFillColorNeutralBackground}"
+                        BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                        BorderThickness="1"
+                        CornerRadius="16"
+                        Grid.Row="3">
+
+                        <StackPanel
+                            HorizontalAlignment="Left"
+                            Spacing="4">
+
+                            <!-- GLYPH -->
+                            <FontIcon
+                            Glyph="&#xE950;"
+                            FontFamily="Segoe Fluent Icons"
+                            FontSize="28"
+                            Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
+                            HorizontalAlignment="Center"/>
+
+                            <!-- HEADER -->
+                            <TextBlock
+                            Text="CPU"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            HorizontalAlignment="Center"/>
+
+                            <!-- DETAILS -->
+                            <TextBlock
+                            x:Name="CPU_Info"
+                            Text="Faliure! Actually, do you have a cpu?"
+                            FontSize="9"
+                            Opacity="0.7"
+                            TextAlignment="Center"
+                            TextWrapping="WrapWholeWords"/>
+                        </StackPanel>
+
+                    </Button>
+                    <Button
+                        Margin="124,0,0,0"
+                        Height="130"
+                        Width="120"
+                        Padding="16"
+                        Click="GPU_Click"
+                        Background="{ThemeResource SystemFillColorNeutralBackground}"
+                        BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                        BorderThickness="1"
+                        CornerRadius="16"
+                        Grid.Row="3">
+
+                        <StackPanel
+                            HorizontalAlignment="Left"
+                            Spacing="4">
+
+                            <!-- GLYPH -->
+                            <FontIcon
+                            Glyph="&#xE7F7;"
+                            FontFamily="Segoe Fluent Icons"
+                            FontSize="28"
+                            Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
+                            HorizontalAlignment="Center"/>
+
+                            <!-- HEADER -->
+                            <TextBlock
+                            Text="GPU"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            HorizontalAlignment="Center"/>
+
+                            <!-- DETAILS -->
+                            <TextBlock
+                            x:Name="GPU_Info"
+                            Text="Faliure! Actually, do you have a gpu?"
+                            FontSize="9"
+                            Opacity="0.7"
+                            TextAlignment="Center"
+                            TextWrapping="WrapWholeWords"/>
+                        </StackPanel>
+
+                    </Button>
+                    <Button
+                        Margin="248,0,0,0"
+                        Height="130"
+                        Width="120"
+                        Padding="16"
+                        Click="RAM_Click"
+                        Background="{ThemeResource SystemFillColorNeutralBackground}"
+                        BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                        BorderThickness="1"
+                        CornerRadius="16"
+                        Grid.Row="3">
+
+                        <StackPanel
+                            HorizontalAlignment="Left"
+                            Spacing="4">
+
+                            <!-- GLYPH -->
+                            <FontIcon
+                            Glyph="&#xEEA0;"
+                            FontFamily="Segoe Fluent Icons"
+                            FontSize="28"
+                            Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
+                            HorizontalAlignment="Center"/>
+
+                            <!-- HEADER -->
+                            <TextBlock
+                            Text="RAM"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            HorizontalAlignment="Center"/>
+
+                            <!-- DETAILS -->
+                            <TextBlock
+                            x:Name="RAM_Info"
+                            Text="Faliure! Actually, do you have a gpu?"
+                            FontSize="9"
+                            Opacity="0.7"
+                            TextAlignment="Center"
+                            TextWrapping="WrapWholeWords"/>
+                        </StackPanel>
+
+                    </Button>
+                    <Button Margin="400,100,0,0" 
+                            Style="{StaticResource AccentButtonStyle}" 
+                            Content="OK" 
+                            CornerRadius="12"
+                            Click="OK_Click"
+                            Grid.Row="3"/>
+                </Grid>
+            </Grid>
+
+            <!-- RESOURCES TAB -->
+            <Grid x:Name="Resources" Tag="Resources" Visibility="Collapsed" RowSpacing="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Border
+                    Grid.Row="0"
+                    Background="{ThemeResource SystemFillColorNeutralBackground}"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="0"
+                    CornerRadius="20"
+                    Padding="16"
+                    Width="444"
+                    HorizontalAlignment="Left">
+                    <Grid RowSpacing="10" ColumnSpacing="16">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" Spacing="8" Grid.Row="0">
+                            <FontIcon
+                                Glyph="&#xEEA0;"
+                                FontSize="15"
+                                Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
+
+                            <TextBlock
+                                x:Name="RAM_Resources_Info"
+                                Text="RAM"
+                                FontSize="12"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <TextBlock
+                                x:Name="RAM_Resources_Usage"
+                                Text="Usage:"
+                                FontSize="12"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                Opacity="0.7"
+                                VerticalAlignment="Center"
+                                Grid.Row="1"/>
+                        <ProgressBar x:Name="ProgressBar_RAM" Width="390" Value="0" Grid.Row="2"/>
+                        <TextBlock
+                            x:Name="RAM_Resources_Total"
+                            Text="Total: Unable to fetch"
+                            FontSize="12"
+                            IsTextSelectionEnabled="True"
+                            SelectionHighlightColor="DarkCyan"
+                            Opacity="0.7"
+                            VerticalAlignment="Center"
+                            Grid.Row="3"/>
+                    </Grid>
+                </Border>
+                <Border
+                    Grid.Row="1"
+                    Background="{ThemeResource SystemFillColorNeutralBackground}"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="0"
+                    CornerRadius="20"
+                    Padding="16"
+                    Width="444"
+                    HorizontalAlignment="Left">
+                    <Grid RowSpacing="10" ColumnSpacing="16">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" Spacing="8" Grid.Row="0">
+                            <FontIcon
+                                Glyph="&#xE950;"
+                                FontSize="15"
+                                Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
+
+                            <TextBlock
+                                x:Name="CPU_Resources_Info"
+                                Text="CPU"
+                                FontSize="12"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <TextBlock
+                                x:Name="CPU_Resources_Usage"
+                                Text="Usage:"
+                                FontSize="12"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                Opacity="0.7"
+                                VerticalAlignment="Center"
+                                Grid.Row="1"/>
+                        <ProgressBar x:Name="ProgressBar_CPU" Width="390" Value="0" Grid.Row="2"/>
+                        <TextBlock
+                            x:Name="CPU_Resources_Cores"
+                            Text="Cores: Unable to fetch"
+                            FontSize="12"
+                            IsTextSelectionEnabled="True"
+                            SelectionHighlightColor="DarkCyan"
+                            Opacity="0.7"
+                            VerticalAlignment="Center"
+                            Grid.Row="3"/>
+                    </Grid>
+                </Border>
+                <Border
+                    Grid.Row="2"
+                    Background="{ThemeResource SystemFillColorNeutralBackground}"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="0"
+                    CornerRadius="20"
+                    Padding="16"
+                    Width="444"
+                    HorizontalAlignment="Left">
+                    <Grid RowSpacing="10" ColumnSpacing="16">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" Spacing="8" Grid.Row="0">
+                            <FontIcon
+                                Glyph="&#xE950;"
+                                FontSize="15"
+                                Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
+
+                            <TextBlock
+                                x:Name="GPU_Resources_Info"
+                                Text="GPU"
+                                FontSize="12"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <TextBlock
+                                x:Name="GPU_Resources_Usage"
+                                Text="Usage:"
+                                FontSize="12"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                Opacity="0.7"
+                                VerticalAlignment="Center"
+                                Grid.Row="1"/>
+                        <ProgressBar x:Name="ProgressBar_GPU" Width="390" Value="0" Grid.Row="2"/>
+                    </Grid>
+                </Border>
+                <Button Margin="400,-11,0,0" 
+                            Style="{StaticResource AccentButtonStyle}" 
+                            Content="OK" 
+                            CornerRadius="12"
+                            Grid.Row="3"/>
+            </Grid>
+
+            <!-- Storage TAB -->
+            <Grid x:Name="Storage" Tag="Storage" Visibility="Visible">
+                <ScrollViewer>
+                    <ItemsControl ItemsSource="{x:Bind Drives}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Expander Header="{Binding Name}" Width="450" MaxHeight="270" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,12" Loaded="Expander_Loaded">
+                                    <Expander.Content>
+                                        <!-- CONTENT -->
+                        <Grid Padding="16" RowSpacing="10" HorizontalAlignment="Left">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <ProgressRing x:Name="ProgressRingSpace" Width="85" Height="85" Value="0"
+                                          IsIndeterminate="False"
+                                          Background="Transparent"
+                                          Margin="-320,0,0,0"/>
+
+                            <FontIcon
+                                x:Name="DriveIcon"
+                                Glyph="&#xEDA2;"
+                                FontSize="21"
+                                Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
+                                Margin="-320,0,0,0"/>
+
+                            <TextBlock
+                                x:Name="SpaceLeft_TextBlock"
+                                Text="Free Space:"
+                                FontSize="13"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"
+                                Opacity="1"
+                                Margin="100,-100,0,0"/>
+
+                            <TextBlock
+                                x:Name="SpaceLeft"
+                                Text="Ask RubRub!"
+                                FontSize="13"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"
+                                Opacity="0.6"
+                                Margin="230,-100,0,0"/>
+
+                                            <!--Ask RubRub!-->
+
+                            <TextBlock
+                                x:Name="SpaceTotal_Textbox"
+                                Text="Total Space:"
+                                FontSize="13"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"
+                                Opacity="1"
+                                Margin="100,-60,0,0"/>
+
+
+                            <TextBlock
+                                x:Name="SpaceTotal"
+                                Text="RUBRUB! COME HERE!"
+                                FontSize="13"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"
+                                Opacity="0.6"
+                                Margin="230,-60,0,0"/>
+
+                                            <!--RUBRUB! COME HERE!-->
+
+                            <TextBlock
+                                x:Name="SpaceRemaining_TextBlock"
+                                Text="Remaining Space:"
+                                FontSize="13"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"
+                                Opacity="1"
+                                Margin="100,-20,0,0"/>
+
+                            <TextBlock
+                                x:Name="SpaceRemaining"
+                                Text="Erroring I guess?"
+                                FontSize="13"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"
+                                Opacity="0.6"
+                                Margin="230,-20,0,0"/>
+
+                                            <!--Erroring I guess?-->
+
+                            <TextBlock
+                                x:Name="MountedLetter_Textbox"
+                                Text="Mounted at:"
+                                FontSize="13"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"
+                                Opacity="1"
+                                Margin="100,20,0,0"/>
+
+                            <HyperlinkButton Content="Change"
+                                             Margin="310,20,0,0" FontSize="13"/>
+
+                            <TextBlock
+                                x:Name="MountedLetter"
+                                Text="?:\"
+                                FontSize="13"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"
+                                Opacity="0.6"
+                                Margin="230,20,0,0"/>
+
+                            <TextBlock
+                                x:Name="Format_Textbox"
+                                Text="Formatted In:"
+                                FontSize="13"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"
+                                Opacity="1"
+                                Margin="100,60,0,0"/>
+
+
+                            <TextBlock
+                                x:Name="Format"
+                                Text="{Binding DriveFormat}"
+                                FontSize="13"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"
+                                Opacity="0.6"
+                                Margin="230,60,0,0"/>
+
+
+                            <TextBlock
+                                x:Name="Type_TextBlock"
+                                Text="Type:"
+                                FontSize="13"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"
+                                Opacity="1"
+                                Margin="100,100,0,0"/>
+
+
+                            <TextBlock
+                                x:Name="Type"
+                                Text="{Binding DriveType}"
+                                FontSize="13"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"
+                                Opacity="0.6"
+                                Margin="230,100,0,0"/>
+
+                            <Button Margin="-15,10,0,0" 
+                            Style="{StaticResource DefaultButtonStyle}" 
+                            Background="Red"
+                            Content="Wipe Disk Forever!" 
+                            IsEnabled="False"
+                            CornerRadius="14"
+                            Grid.Row="3"/>
+
+                            <Button Margin="296,10,0,0" 
+                            Style="{StaticResource AccentButtonStyle}" 
+                            Content="CheckDisk" 
+                            Click="ErrorChecker_Click"
+                            IsEnabled="False"
+                            CornerRadius="14"
+                            Grid.Row="3"/>
+                        </Grid>
+                    </Expander.Content>
+                </Expander>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Grid>
+
+            <!-- ABOUT TAB -->
+            <Grid x:Name="About" Tag="About" Visibility="Collapsed" RowSpacing="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Border
+                    Grid.Row="0"
+                    Background="{ThemeResource SystemFillColorNeutralBackground}"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="0"
+                    CornerRadius="20"
+                    Padding="16"
+                    Width="444"
+                    HorizontalAlignment="Left">
+                    <Grid RowSpacing="16" ColumnSpacing="16">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" Spacing="8" Grid.Row="0">
+                            <FontIcon
+                                Glyph="&#xF167;"
+                                FontSize="15"
+                                Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
+
+                            <TextBlock
+                                x:Name="WinverCopyrighting"
+                                Text="Microsoft Windows"
+                                FontSize="12"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <TextBlock
+                            Grid.Row="1"
+                            x:Name="WinverTextUknow"
+                            Text="The Windows 11 Home Single Language operating system and its user
+                                  interface are protected by trademark and other pending or existing
+                                  intellectual property rights in the United States and other countries/regions. 
+                            This product is licensed under the Microsoft Software License Terms."
+                            FontSize="11"
+                            Opacity="0.7"
+                            IsTextSelectionEnabled="True"
+                            SelectionHighlightColor="DarkCyan"
+                            TextWrapping="WrapWholeWords"/>
+                    </Grid>
+                </Border>
+                <Border
+                    Grid.Row="1"
+                    Background="{ThemeResource SystemFillColorNeutralBackground}"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="0"
+                    CornerRadius="20"
+                    Padding="16"
+                    Width="444"
+                    HorizontalAlignment="Left">
+                    <Grid RowSpacing="16" ColumnSpacing="16">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" Spacing="8" Grid.Row="0">
+                            <FontIcon
+                                Glyph="&#xF167;"
+                                FontSize="15"
+                                Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
+
+                            <TextBlock
+                                x:Name="WinverCopyrightingWinflow"
+                                Text="WinFlow"
+                                FontSize="12"
+                                FontWeight="SemiBold"
+                                IsTextSelectionEnabled="True"
+                                SelectionHighlightColor="DarkCyan"
+                                VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <TextBlock
+                            Grid.Row="1"
+                            x:Name="WinFlowVersion"
+                            Text="Version 0.0.1 [BETA]"
+                            FontSize="11"
+                            Opacity="1"
+                            IsTextSelectionEnabled="True"
+                            SelectionHighlightColor="DarkCyan"
+                            TextWrapping="WrapWholeWords"/>
+                        <TextBlock
+                            Grid.Row="2"
+                            x:Name="WinFlowText"
+                            Text="WinFlow is a mod initally made by a 13y old. This mod does not modify any system file nor injects it's own code at runtime. It just a rewrite of apps in Windows 11."
+                            FontSize="11"
+                            Opacity="0.7"
+                            IsTextSelectionEnabled="True"
+                            SelectionHighlightColor="DarkCyan"
+                            TextWrapping="WrapWholeWords"/>
+                        <TextBlock
+                            Grid.Row="3"
+                            x:Name="Creator"
+                            Text="Creator: Advay-CMD"
+                            FontSize="11"
+                            Opacity="0.8"
+                            IsTextSelectionEnabled="True"
+                            SelectionHighlightColor="DarkCyan"
+                            TextWrapping="WrapWholeWords"/>
+                    </Grid>
+                </Border>
+                <Button Margin="400,-11,0,0" 
+                            Style="{StaticResource AccentButtonStyle}" 
+                            Content="OK" 
+                            Click="OK_Click"
+                            CornerRadius="12"
+                            Grid.Row="3"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

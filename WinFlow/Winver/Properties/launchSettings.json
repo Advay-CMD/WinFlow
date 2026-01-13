@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Winver (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Winver (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

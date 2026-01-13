@@ -1,0 +1,5 @@
+MainPackage=D:\Files\VisualStudio\Winver\bin\ARM64\Release\net8.0-windows10.0.19041.0\win-arm64\Winver_0.0.1.0_arm64.msix
+ResourcePack=D:\Files\VisualStudio\Winver\bin\ARM64\Release\net8.0-windows10.0.19041.0\win-arm64\Winver_0.0.1.0_scale-100.msix
+ResourcePack=D:\Files\VisualStudio\Winver\bin\ARM64\Release\net8.0-windows10.0.19041.0\win-arm64\Winver_0.0.1.0_scale-125.msix
+ResourcePack=D:\Files\VisualStudio\Winver\bin\ARM64\Release\net8.0-windows10.0.19041.0\win-arm64\Winver_0.0.1.0_scale-150.msix
+ResourcePack=D:\Files\VisualStudio\Winver\bin\ARM64\Release\net8.0-windows10.0.19041.0\win-arm64\Winver_0.0.1.0_scale-400.msix

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WinFlow Installer (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "WinFlow Installer (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
