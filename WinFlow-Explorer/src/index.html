@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WinFlow Explorer</title>
+    <script type="module" src="/main.js" defer></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+
+  <body>
+    <div class="titlebar" data-tauri-drag-region>
+      <div class="tabs">
+      <div class="tab"><i class="ph-bold ph-house" style="margin-top: 2.5px;"></i>Home
+        <button class="tab-close">
+          <svg viewBox="0 0 16 16" style="margin-top: 1px">
+          <path d="M2.5 2.5L13.5 13.5M13.5 2.5L2.5 13.5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"/>
+        </svg>
+        </button></div>
+        <button class="tab-add">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M8 1V15M1 8H15"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"/>
+          </svg>
+        </button>
+        </div>
+
+      <div class="window-controls">
+        <button id="minimize" aria-label="Minimize">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="7.5" width="10" height="1" fill="currentColor"/>
+          </svg>
+        </button>
+        <button id="maximize" aria-label="Maximize">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3.5" y="3.5" width="9" height="9" rx="1" fill="none" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </button>
+        <button id="close" aria-label="Close">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.2" stroke-linecap="square"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <center><div class="nav-bar-card">
+      <button class="nav-btn">
+      <i class="ph ph-caret-left" style="font-size: 15px;"></i>
+      </button>
+      <button class="nav-btn">
+      <i class="ph ph-caret-right" style="font-size: 15px;"></i>
+      </button>
+      <button class="nav-btn">
+      <i class="ph ph-arrow-up" style="font-size: 15px;"></i>
+      </button>
+      <button class="nav-btn">
+      <i class="ph ph-arrow-clockwise" style="font-size: 15px;"></i>
+      </button>
+      <div class="path-bar">Shows the path - Development</div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search Everything"/>
+        <div style="margin-left:auto; display:flex; align-items:center; gap:8px;">
+          <button class="nav-btn"><i class="ph ph-magnifying-glass"></i></button>
+        </div>
+      </div>
+    </div></center>
+    <div class="explorer">
+      <aside class="sidebar">
+
+        <div class="sidebar-item" data-page="home.html">
+            <i class="ph ph-house"></i>
+            <span>Home</span>
+            <i class="ph ph-caret-down sidebar-arrow"></i>
+        </div>
+
+        <div class="sidebar-subitems">
+          <div class="sidebar-subitem" data-page="desktop.html"><i class="ph ph-desktop"></i>Desktop</div>
+          <div class="sidebar-subitem" data-page="downloads.html"><i class="ph ph-download-simple"></i>Downloads</div>
+          <div class="sidebar-subitem" data-page="documents.html"><i class="ph ph-file-text"></i>Documents</div>
+          <div class="sidebar-subitem" data-page="pictures.html"><i class="ph ph-image"></i>Pictures</div>
+          <div class="sidebar-subitem" data-page="music.html"><i class="ph ph-music-notes"></i>Music</div>
+          <div class="sidebar-subitem" data-page="videos.html"><i class="ph ph-video"></i>Videos</div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-item-2" data-page="this-pc.html"><i class="ph ph-desktop"></i>This PC</div>
+        <div class="sidebar-item-2" data-page="network.html"><i class="ph ph-network"></i>Network</div>
+        <div class="sidebar-item-2" data-page="recycle-bin.html"><i class="ph ph-trash-simple"></i>Recycle Bin</div>
+        <div class="sidebar-item-2" data-page="onedrive.html"><i class="ph ph-cloud"></i>OneDrive</div>
+
+        <div class="sidebar-divider"></div>
+
+        </aside>
+
+      <main class="file-area">
+          <div class="toolbar">
+              <button class="nav-btn-actions"><i class="ph ph-plus-circle" style="font-size: 15px;"> </i> New <i class="ph-bold ph-caret-down" style="font-size: 10px;"></i></button>
+              <div class="divider-actions"></div>
+              <button class="nav-btn-actions"><i class="ph ph-scissors" style="font-size: 15px; transform: rotate(270deg);"></i></button>
+              <button class="nav-btn-actions"><i class="ph ph-copy" style="font-size: 15px;"></i></button>
+              <button class="nav-btn-actions"><i class="ph ph-clipboard" style="font-size: 15px;"></i></button>
+              <button class="nav-btn-actions"><i class="ph ph-textbox" style="font-size: 15px;"></i></button>
+              <button class="nav-btn-actions"><i class="ph ph-share" style="font-size: 15px;"></i></button>
+              <button class="nav-btn-actions"><i class="ph ph-trash-simple" style="font-size: 15px;"></i></button>
+              <button class="nav-btn-actions"><i class="ph ph-info" style="font-size: 15px;"></i></button>
+              <button class="nav-btn-actions"><i class="ph ph-cards-three" style="font-size: 15px;"></i></button>
+              <div style="margin-left:auto; display:flex; align-items:center; gap:8px;">
+                <button class="nav-btn-actions"><i class="ph ph-arrows-down-up" style="font-size: 15px;"></i></button>
+                <button class="nav-btn-actions"><i class="ph ph-list" style="font-size: 15px;"></i></button>
+                <button class="nav-btn-actions"><i class="ph ph-square-split-horizontal" style="font-size: 15px;"></i></button>
+                <button class="nav-btn-actions"><i class="ph ph-push-pin" style="font-size: 15px;"></i></button>
+                <button class="nav-btn-actions"><i class="ph ph-square-half" style="font-size: 15px;"></i></button>
+                <button class="nav-btn-actions"><i class="ph ph-dots-three" style="font-size: 15px;"></i></button>
+              </div>
+          </div>
+
+          <div class="files">
+          </div>
+      </main>
+    </div>
+  </body>
+</html>
