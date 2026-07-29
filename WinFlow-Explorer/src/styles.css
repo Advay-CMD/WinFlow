@@ -5,30 +5,16 @@ body {
     overflow: hidden;
 
     background:
-        radial-gradient(
-            1400px 900px at 15% -10%,
-            rgba(82,118,255,.10),
-            transparent 70%
-        ),
-
-        radial-gradient(
-            1200px 900px at 90% 120%,
-            rgba(145,94,255,.08),
-            transparent 75%
-        ),
-
-        radial-gradient(
-            900px 700px at 50% 40%,
-            rgba(255,255,255,.018),
-            transparent 80%
-        ),
-
-        linear-gradient(
-            180deg,
-            #12131b 0%,
-            #0d1017 40%,
-            #090b11 100%
-        );
+        radial-gradient(1400px 900px at 15% -10%,
+            rgba(82, 118, 255, 0.1),
+            transparent 70%),
+        radial-gradient(1200px 900px at 90% 120%,
+            rgba(145, 94, 255, 0.08),
+            transparent 75%),
+        radial-gradient(900px 700px at 50% 40%,
+            rgba(255, 255, 255, 0.018),
+            transparent 80%),
+        linear-gradient(180deg, #12131b 0%, #0d1017 40%, #090b11 100%);
 }
 
 .explorer {
@@ -41,9 +27,9 @@ body {
 
 .sidebar {
     width: 240px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.05);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 20px;
 
     color: white;
@@ -65,10 +51,10 @@ body {
     align-items: center;
 
     padding: 0 18px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 15px;
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.05);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     gap: 8px;
 
@@ -77,9 +63,9 @@ body {
 
 .files {
     flex: 1;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.05);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     overflow: auto;
     user-select: none;
@@ -99,7 +85,7 @@ body {
     display: flex;
     gap: 10px;
     margin-top: 28px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 13px;
     align-items: center;
     width: calc(100% - 60px);
@@ -110,20 +96,20 @@ body {
 
     border-radius: 20px;
 
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.05);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 
     color: white;
 
-    transition: .18s ease;
+    transition: 0.18s ease;
 }
 
 .path-bar {
-  flex: 3;
+    flex: 3;
     display: flex;
     gap: 10px;
     margin-top: 0px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 13px;
     align-items: center;
     width: calc(100% - 60px);
@@ -134,12 +120,12 @@ body {
 
     border-radius: 20px;
 
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.05);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 
     color: white;
 
-    transition: .18s ease;
+    transition: 0.18s ease;
 }
 
 .search-bar {
@@ -147,7 +133,7 @@ body {
     display: flex;
     gap: 10px;
     margin-top: 0px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 13px;
     align-items: center;
     width: calc(100% - 30px);
@@ -158,12 +144,12 @@ body {
 
     border-radius: 20px;
 
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.05);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 
     color: white;
 
-    transition: .18s ease;
+    transition: 0.18s ease;
 }
 
 .search-bar input {
@@ -172,12 +158,12 @@ body {
     outline: none;
     background: transparent;
     color: white;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: "Segoe UI", sans-serif;
     font-size: 13px;
 }
 
 .search-bar input::placeholder {
-    color: rgba(255,255,255,.45);
+    color: rgba(255, 255, 255, 0.45);
 }
 
 .nav-btn {
@@ -192,19 +178,19 @@ body {
     border-radius: 7px;
 
     background: transparent;
-    color: rgba(255,255,255,.75);
+    color: rgba(255, 255, 255, 0.75);
 
     cursor: pointer;
-    transition: all .15s ease;
+    transition: all 0.15s ease;
 }
 
 .nav-btn:hover {
-    background: rgba(255,255,255,.08);
+    background: rgba(255, 255, 255, 0.08);
     color: white;
 }
 
 .nav-btn:active {
-    transform: scale(.92);
+    transform: scale(0.92);
 }
 
 .nav-btn-actions {
@@ -220,19 +206,19 @@ body {
     border-radius: 11px;
 
     background: transparent;
-    color: rgba(255,255,255,.75);
+    color: rgba(255, 255, 255, 0.75);
 
     cursor: pointer;
-    transition: all .15s ease;
+    transition: all 0.15s ease;
 }
 
 .nav-btn-actions:hover {
-    background: rgba(255,255,255,.08);
+    background: rgba(255, 255, 255, 0.08);
     color: white;
 }
 
 .nav-btn-actions:active {
-    transform: scale(.92);
+    transform: scale(0.92);
 }
 
 .titlebar {
@@ -250,8 +236,7 @@ body {
     gap: 6px;
 }
 
-.tab-hidden 
-{
+.tab-hidden {
     display: flex;
     margin-right: 20px;
 }
@@ -261,7 +246,7 @@ body {
     align-items: center;
     gap: 10px;
     margin-top: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 13px;
     align-items: center;
     max-width: 260px;
@@ -271,12 +256,12 @@ body {
 
     border-radius: 20px;
 
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.05);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 
     color: white;
 
-    transition: .18s ease;
+    transition: 0.18s ease;
 }
 
 .tab-close {
@@ -291,19 +276,19 @@ body {
     border-radius: 7px;
 
     background: transparent;
-    color: rgba(255,255,255,.75);
+    color: rgba(255, 255, 255, 0.75);
 
     cursor: pointer;
-    transition: all .15s ease;
+    transition: all 0.15s ease;
 }
 
 .tab-close:hover {
-    background: rgba(255,255,255,.08);
+    background: rgba(255, 255, 255, 0.08);
     color: white;
 }
 
 .tab-close:active {
-    transform: scale(.92);
+    transform: scale(0.92);
 }
 
 .tab-add {
@@ -319,27 +304,29 @@ body {
     margin-top: 30px;
 
     background: transparent;
-    color: rgba(255,255,255,.75);
+    color: rgba(255, 255, 255, 0.75);
 
     cursor: pointer;
-    transition: all .15s ease;
+    transition: all 0.15s ease;
 }
 
 .tab-add:hover {
-    background: rgba(255,255,255,.08);
+    background: rgba(255, 255, 255, 0.08);
     color: white;
 }
 
 .tab-add:active {
-    transform: scale(.92);
+    transform: scale(0.92);
 }
 
 .title {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI",
+        system-ui, sans-serif;
     font-size: 12px;
     font-weight: 600;
-    color: rgba(255, 255, 255, .85);
-    letter-spacing: .3px;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.3px;
 }
 
 .window-controls {
@@ -355,7 +342,7 @@ body {
     margin-top: 7px;
     margin-right: 4px;
     background: transparent;
-    color: rgba(255, 255, 255, .85);
+    color: rgba(255, 255, 255, 0.85);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -380,32 +367,45 @@ body {
     border-radius: 5px;
     opacity: 0;
     inset: 1px;
-    transition: opacity .15s ease;
+    transition: opacity 0.15s ease;
     backdrop-filter: blur(6px);
-    transform: scale(.9);
+    transform: scale(0.9);
 }
 
 .window-controls button:hover::before {
     opacity: 1;
     transform: scale(1);
-    background: rgba(255, 255, 255, .08);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .window-controls button:active::before {
-    background: rgba(255, 255, 255, .12);
+    background: rgba(255, 255, 255, 0.12);
 }
 
 @keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 #close::before {
-  border-radius: 4px;
+    border-radius: 4px;
 }
 
 #close:hover::before {
-    background-image: linear-gradient(135deg, #FBBF24 0%, #EF4444 20%, #D946EF 40%, #6366F1 60%, #06B6D4 80%, #22C55E 100%);
+    background-image: linear-gradient(135deg,
+            #fbbf24 0%,
+            #ef4444 20%,
+            #d946ef 40%,
+            #6366f1 60%,
+            #06b6d4 80%,
+            #22c55e 100%);
     background-size: 200% 200%;
     background-position: 0% 50%;
     animation: gradient-shift 3s ease infinite;
@@ -419,16 +419,17 @@ body {
 .divider-actions {
     width: 1px;
     height: 22px;
-    border-left: 1.5px solid rgba(255,255,255,.08);
+    border-left: 1.5px solid rgba(255, 255, 255, 0.08);
     margin: 0 3px;
 }
 
 i {
-  background: linear-gradient(135deg, #38BDF8 0%, #0EA5E9 50%, #2563EB 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent; /* Fallback */
+    background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #2563eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    /* Fallback */
 }
 
 .sidebar {
@@ -449,27 +450,27 @@ i {
     font-family: "Segoe UI", sans-serif;
     font-size: 13px;
 
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.05);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 13px;
 
     gap: 8px;
     color: white;
 
-    transition: .18s ease;
+    transition: 0.18s ease;
 }
 
 .sidebar-item:hover {
-    background: rgba(255,255,255,.08);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .sidebar-item:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 .sidebar-arrow {
     margin-left: auto;
-    color: rgba(255,255,255,.6);
+    color: rgba(255, 255, 255, 0.6);
     font-size: 14px;
 }
 
@@ -491,21 +492,21 @@ i {
 
     border-radius: 10px;
 
-    color: rgba(255,255,255,.75);
+    color: rgba(255, 255, 255, 0.75);
     font-family: "Segoe UI", sans-serif;
     font-size: 13px;
     gap: 8px;
 
-    transition: .18s ease;
+    transition: 0.18s ease;
 }
 
 .sidebar-subitem:hover {
-    background: rgba(255,255,255,.05);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .sidebar-subitem.selected-sub {
     color: white;
-    background: rgba(255,255,255,.06);
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .sidebar-subitem.selected-sub::before {
@@ -519,7 +520,7 @@ i {
     width: 3px;
     border-radius: 999px;
 
-    background: #4F8CFF;
+    background: #4f8cff;
 }
 
 .sidebar-subitem:active {
@@ -530,7 +531,7 @@ i {
     width: calc(100% - 10px);
     height: 1px;
     margin: 10px auto;
-    background: rgba(255,255,255,.12);
+    background: rgba(255, 255, 255, 0.12);
     border-radius: 999px;
 }
 
@@ -546,18 +547,18 @@ i {
     font-family: "Segoe UI", sans-serif;
     font-size: 13px;
 
-    background: rgba(255,255,255,.0);
+    background: rgba(255, 255, 255, 0);
     border: none;
     border-radius: 13px;
 
     gap: 8px;
     color: white;
 
-    transition: all .18s ease;
+    transition: all 0.18s ease;
 }
 
 .sidebar-item-2:hover {
-    background: rgba(255,255,255,.08);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .sidebar-item-2:active {
@@ -585,7 +586,7 @@ i {
 
     cursor: pointer;
 
-    transition: .18s ease;
+    transition: 0.18s ease;
 }
 
 .recents-icon {
@@ -602,7 +603,7 @@ i {
 }
 
 .recents-btn:hover {
-    background: rgba(255,255,255,.05);
+    background: rgba(255, 255, 255, 0.05);
     color: white;
 }
 
@@ -625,9 +626,9 @@ i {
     min-height: 40px;
     flex: none;
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.05);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 15px;
     user-select: none;
     -webkit-user-select: none;
@@ -639,7 +640,7 @@ i {
 
     display: flex;
     flex-direction: column;
-    transition: box-shadow 0.2s cubic-bezier(.4, 0, .2, 1);
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .recent-card:hover {
@@ -680,21 +681,26 @@ i {
     border-radius: 20px;
 
     background: transparent;
-    color: rgba(255,255,255,.75);
+    color: rgba(255, 255, 255, 0.75);
 
     cursor: pointer;
-    transition: all .15s ease;
+    transition: all 0.15s ease;
 
-    margin-left:auto;
+    margin-left: auto;
 }
 
 .recent-card-btn:hover {
-    background: rgba(255,255,255,.08);
+    background: rgba(255, 255, 255, 0.08);
     color: white;
 }
 
 .recent-card-btn:active {
-    transform: scale(.92);
+    transform: scale(0.92);
+}
+
+.recent-card-title {
+    font-size: 11px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .pinned {
@@ -704,7 +710,7 @@ i {
 }
 
 .pinned-head {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
 }
 
@@ -716,9 +722,9 @@ i {
     min-height: 40px;
     flex: none;
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.05);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 15px;
     user-select: none;
     -webkit-user-select: none;
@@ -733,7 +739,19 @@ i {
 
 .pinned-items-sub {
     margin-left: 2px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 12px;
     color: #808080;
+}
+
+.pinned-items-name {
+    font-size: 15px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 13px;
+    margin-left: 1px;
+}
+
+.pinned-items i {
+    font-size: 30px;
+    margin-bottom: 20px;
 }
