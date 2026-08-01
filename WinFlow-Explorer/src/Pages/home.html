@@ -6,20 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WinFlow Explorer</title>
     <script type="module" src="/main.js" defer></script>
+    <link rel="preload" href="https://unpkg.com/@phosphor-icons/web" as="script" >
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
 
-  <body>
-    <div style="display: flex; align-items: center; gap: 10px">
-      <i class="ph ph-caret-up" style="font-size: 16px"></i>
-      <button class="recents-btn">
-        <i class="ph ph-clock recents-icon"></i>
-        Recents
-      </button>
-      <button class="recents-btn">
-        <i class="ph ph-star recents-icon"></i>
-        Favorites
-      </button>
+<body>
+    <div class="widgets">
+        <div class="widget-card">
+            <span style="font-size: 13px;"><i class="ph ph-star" style="font-size: 13px; margin-right: 10px;"></i>Favorites</span>
+        </div>
+        <div class="widget-card">Will be implemented later.</div>
+        <div class="widget-card">3</div>
+    </div><br>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <i class="ph ph-caret-up" style="font-size: 16px;"></i>
+        <button class="recents-btn">
+            <i class="ph ph-clock recents-icon"></i>
+                Recents
+        </button>
+        <button class="recents-btn">
+            <i class="ph ph-star recents-icon"></i>
+                Favorites
+        </button>
     </div>
     <div class="recent-card-container">
       <div class="recent-card">

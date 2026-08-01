@@ -56,13 +56,10 @@ let removeTimer = null;
 
 function getLocalPoint(e) {
     const rect = filesArea.getBoundingClientRect();
-    const style = getComputedStyle(filesArea);
-    const padLeft = parseFloat(style.paddingLeft) || 0;
-    const padTop = parseFloat(style.paddingTop) || 0;
 
     return {
-        x: e.clientX - rect.left - padLeft,
-        y: e.clientY - rect.top - padTop,
+        x: e.clientX - rect.left + filesArea.scrollLeft,
+        y: e.clientY - rect.top + filesArea.scrollTop,
     };
 }
 
