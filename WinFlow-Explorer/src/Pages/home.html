@@ -13,10 +13,66 @@
 <body>
     <div class="widgets">
         <div class="widget-card">
-            <span style="font-size: 13px;"><i class="ph ph-star" style="font-size: 13px; margin-right: 10px;"></i>Favorites</span>
+            <span style="font-size: 14px; margin-bottom: 10px;"><i class="ph ph-star" style="font-size: 14px; margin-right: 10px;"></i>Favorites</span>
+            <div class="widget-fav selectable"><i class="ph ph-video"></i><div class="widget-fav-card">Windows 12.mp4</div><div class="widget-fav-card-sub">Videos</div></div>
+            <div class="widget-fav selectable"><i class="ph ph-video"></i><div class="widget-fav-card">Windows 12-2.mp4</div><div class="widget-fav-card-sub">Videos</div></div>
+            <div class="widget-fav selectable"><i class="ph ph-video"></i><div class="widget-fav-card">Windows 12-3.mp4</div><div class="widget-fav-card-sub">Videos</div></div>
+            <div class="widget-fav selectable"><i class="ph ph-video"></i><div class="widget-fav-card">Windows 12-4.mp4</div><div class="widget-fav-card-sub">Videos</div></div>
+            <div class="widget-card-nav">
+              <i class="ph ph-caret-left"></i>
+              <i class="ph ph-caret-right"></i>
+            </div>
         </div>
-        <div class="widget-card">Will be implemented later.</div>
-        <div class="widget-card">3</div>
+        <div class="widget-card">
+          <span style="font-size: 14px; margin-bottom: 10px;"><i class="ph ph-file-text" style="font-size: 14px; margin-right: 10px;"></i>Documents</span>
+          <div class="widget-storage-info">
+            <h1 class="widget-storage-head">104 GB</h1>
+
+            <div class="widget-storage-files">
+              2034 Files
+            </div>
+            <div class="widget-storage-files">
+              20 Folders
+            </div>
+          </div><br>
+          <div class="storage-bar">
+            <div class="storage-video"></div>
+            <div class="storage-image"></div>
+            <div class="storage-document"></div>
+            <div class="storage-other"></div>
+          </div>
+          <div class="widget-storage-tags">
+            <div class="widget-storage-files">
+              Videos
+            </div>
+            <div class="widget-storage-files">
+              Photos
+            </div>
+            <div class="widget-storage-files">
+              Important
+            </div>
+            <div class="widget-storage-files">
+              Documents
+            </div>
+            <div class="widget-storage-files">
+              Executables
+            </div>
+            <button class="widget-storage-addtag"> 
+              <i class="ph ph-plus"></i>
+            </button>
+          </div>
+        </div>
+        <div class="widget-card">
+          <span style="font-size: 14px; margin-bottom: 10px;"><i class="ph ph-folder" style="font-size: 14px; margin-right: 10px;"></i>Collection 1</span>
+          <div class="widget-fav selectable"><i class="ph ph-video"></i><div class="widget-fav-card">Windows 12.mp4</div><div class="widget-fav-card-sub">Videos</div></div>
+            <div class="widget-fav selectable"><i class="ph ph-video"></i><div class="widget-fav-card">Windows 12-2.mp4</div><div class="widget-fav-card-sub">Videos</div></div>
+            <div class="widget-fav selectable"><i class="ph ph-video"></i><div class="widget-fav-card">Windows 12-3.mp4</div><div class="widget-fav-card-sub">Videos</div></div>
+            <div class="widget-fav selectable"><i class="ph ph-video"></i><div class="widget-fav-card">Windows 12-4.mp4</div><div class="widget-fav-card-sub">Videos</div></div>
+            <div class="widget-card-nav">
+              <i class="ph ph-caret-left"></i>
+              <i class="ph ph-caret-right"></i>
+            </div>
+        </div>
     </div><br>
     <div style="display: flex; align-items: center; gap: 10px;">
         <i class="ph ph-caret-up" style="font-size: 16px;"></i>
@@ -30,7 +86,7 @@
         </button>
     </div>
     <div class="recent-card-container">
-      <div class="recent-card">
+      <div class="recent-card selectable">
         <center>
           <img
             class="recent-card-img"
@@ -52,7 +108,7 @@
         </div>
       </div>
 
-      <div class="recent-card">
+      <div class="recent-card selectable">
         <center>
           <img
             class="recent-card-img"
@@ -73,7 +129,7 @@
           </button>
         </div>
       </div>
-      <div class="recent-card">
+      <div class="recent-card selectable">
         <center>
           <img
             class="recent-card-img"
@@ -94,7 +150,7 @@
           </button>
         </div>
       </div>
-      <div class="recent-card">
+      <div class="recent-card selectable">
         <center>
           <img
             class="recent-card-img"
@@ -123,27 +179,27 @@
     </div>
     <br />
     <div class="pinned">
-      <div class="pinned-items">
+      <div class="pinned-items selectable">
         <i class="ph ph-desktop"></i>
         <span class="pinned-items-name"> Desktop </span>
         <div class="pinned-items-sub">10 items</div>
       </div>
-      <div class="pinned-items">
+      <div class="pinned-items selectable">
         <i class="ph ph-download-simple"></i>
         <span class="pinned-items-name"> Downloads </span>
         <div class="pinned-items-sub">1067 items</div>
       </div>
-      <div class="pinned-items">
+      <div class="pinned-items selectable">
         <i class="ph ph-file-text"></i>
         <span class="pinned-items-name"> Documents </span>
         <div class="pinned-items-sub">2034 items</div>
       </div>
-      <div class="pinned-items">
+      <div class="pinned-items selectable">
         <i class="ph ph-image"></i>
         <span class="pinned-items-name"> Pictures </span>
         <div class="pinned-items-sub">13452 items</div>
       </div>
-      <div class="pinned-items">
+      <div class="pinned-items selectable">
         <i class="ph ph-music-notes"></i>
         <span class="pinned-items-name"> Music </span>
         <div class="pinned-items-sub">100 items</div>

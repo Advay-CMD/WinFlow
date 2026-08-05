@@ -20,6 +20,8 @@ body {
 @media (prefers-color-scheme: dark) {
   :root {
     --scrollbar-thumb: rgba(255, 255, 255, 0.25);
+    --font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    --i-gradient: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #2563eb 100%);
   }
 }
 
@@ -55,7 +57,7 @@ body {
 
 .sidebar {
     width: 240px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font);
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 20px;
@@ -79,7 +81,7 @@ body {
     align-items: center;
 
     padding: 0 18px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font);
     font-size: 15px;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -91,7 +93,7 @@ body {
 
 .files {
     flex: 1;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font);
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 20px;
@@ -113,7 +115,7 @@ body {
     display: flex;
     gap: 10px;
     margin-top: 28px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font);
     font-size: 13px;
     align-items: center;
     width: calc(100% - 60px);
@@ -137,7 +139,7 @@ body {
     display: flex;
     gap: 10px;
     margin-top: 0px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font);
     font-size: 13px;
     align-items: center;
     width: calc(100% - 60px);
@@ -161,7 +163,7 @@ body {
     display: flex;
     gap: 10px;
     margin-top: 0px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font);
     font-size: 13px;
     align-items: center;
     width: calc(100% - 30px);
@@ -186,7 +188,7 @@ body {
     outline: none;
     background: transparent;
     color: white;
-    font-family: "Segoe UI", sans-serif;
+    font-family: var(--font);
     font-size: 13px;
 }
 
@@ -274,7 +276,7 @@ body {
     align-items: center;
     gap: 10px;
     margin-top: 30px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font);
     font-size: 13px;
     align-items: center;
     max-width: 260px;
@@ -348,9 +350,7 @@ body {
 }
 
 .title {
-    font-family:
-        -apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI",
-        system-ui, sans-serif;
+    font-family: var(--font);
     font-size: 12px;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.85);
@@ -452,7 +452,7 @@ body {
 }
 
 i {
-    background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #2563eb 100%);
+    background: var(--i-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -475,7 +475,7 @@ i {
 
     padding: 0 18px;
 
-    font-family: "Segoe UI", sans-serif;
+    font-family: var(--font);
     font-size: 13px;
 
     background: rgba(255, 255, 255, 0.04);
@@ -521,7 +521,7 @@ i {
     border-radius: 10px;
 
     color: rgba(255, 255, 255, 0.75);
-    font-family: "Segoe UI", sans-serif;
+    font-family: var(--font);
     font-size: 13px;
     gap: 8px;
 
@@ -572,7 +572,7 @@ i {
 
     padding: 0 18px;
 
-    font-family: "Segoe UI", sans-serif;
+    font-family: var(--font);
     font-size: 13px;
 
     background: rgba(255, 255, 255, 0);
@@ -654,7 +654,7 @@ i {
     min-height: 40px;
     flex: none;
 
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font);
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 15px;
@@ -673,6 +673,12 @@ i {
 
 .recent-card:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.recent-card:active {
+    background: rgba(0, 190, 255, 0.15);
+    border: 1px solid rgba(0, 190, 255, 0.65);
+    box-shadow: 0 0 2px 1px rgba(0, 190, 255, 0.35);
 }
 
 .recent-card-info {
@@ -728,29 +734,54 @@ i {
 
 .recent-card-title {
     font-size: 11px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font);
 }
 
 .pinned {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 15px;
 }
 
+.selectable {
+    transition:
+        background 180ms cubic-bezier(.22, 1, .36, 1),
+        border-color 180ms cubic-bezier(.22, 1, .36, 1),
+        box-shadow 220ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.selectable.selected {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 199, 246, 0.20),
+            rgba(59, 160, 246, 0.13)
+        );
+
+    border-color: rgba(59, 199, 246, 0.8);
+
+    box-shadow:
+        0 0 2px 1px rgba(59, 199, 246, 0.5),
+        0 0 10px rgba(59, 199, 246, 0.08),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+    /* HMM, I know this is a lot of box-shadow, but it looks good. */
+}
+
 .pinned-head {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font);
     font-size: 14px;
 }
 
 .pinned-items {
-    width: 173px;
+    width: 172px;
     padding-left: 20px;
     padding-top: 9px;
     padding-bottom: 8px;
     min-height: 40px;
     flex: none;
 
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font);
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 15px;
@@ -772,13 +803,25 @@ i {
 
 .pinned-items-sub {
     margin-left: 2px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font);
     font-size: 12px;
     color: #808080;
 }
 
+.pinned-items-name {
+    font-size: 15px; font-family: var(--font); 
+    margin-bottom: 13px; 
+    margin-left: 1px;
+}
+
+.pinned-items i {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
 .widgets {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 8px;
     margin-top: 10px;
@@ -789,7 +832,7 @@ i {
     min-height: 40px;
     flex: none;
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font);
     background: rgba(255,255,255,.04);
     border: 1px solid rgba(255,255,255,.05);
     border-radius: 15px;
@@ -797,7 +840,7 @@ i {
     -webkit-user-select: none;
     position: relative;
     color: white;
-    padding: 10px 15px;
+    padding: 15px 20px;
     box-sizing: border-box;
     box-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
 
@@ -808,4 +851,173 @@ i {
 
 .recent-card:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.widget-fav-card {
+    display: flex;
+    gap: 10px;
+    margin-top: 0px;
+    font-family: var(--font);
+    font-size: 13px;
+    align-items: center;
+    width: calc(100% - 30px);
+    height: 30px;
+
+    padding: 2px 10px;
+    padding-left: 10px;
+
+    border-radius: 34px;
+
+    background: transparent;
+    border: transparent;
+
+    color: white;
+
+    transition: 0.18s ease;
+}
+
+.widget-fav-card-sub {
+    font-family: var(--font);
+    font-size: 13px;
+    color: #808080;
+}
+
+.widget-fav {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.0);
+    border-radius: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.widget-fav i {
+    margin-top: 2px;
+}
+
+.widget-fav:hover {
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.widget-storage-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.widget-storage-head {
+    font-family: var(--font);
+    font-size: 23px;
+    margin: 8px 0 0 9px;
+}
+
+.widget-storage-files {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+
+    margin-left: 8px;
+    margin-right: 3px;
+    margin-top: 8px;
+
+    padding: 8px 12px;
+
+    border-radius: 34px;
+
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    color: white;
+
+    font-family: var(--font);
+    font-size: 11px;
+
+    white-space: nowrap;
+
+    transition: 0.18s ease;
+}
+
+.storage-bar {
+    display: flex;
+    width: calc(100% - 10px);
+    height: 8px;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    background: rgba(255,255,255,.08);
+}
+
+.storage-video {
+    width: 30%;
+    background: linear-gradient(135deg, #38BDF8 0%, #0EA5E9 100%);
+}
+
+.storage-image {
+    width: 20%;
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 50%, #1D4ED8 100%);
+}
+
+.storage-document {
+    width: 40%;
+    background: linear-gradient(135deg, #9333EA 0%, #7C3AED 50%, #6366F1 100%);
+}
+
+.storage-other {
+    width: 10%;
+    background: linear-gradient(135deg, #22C55E 0%, #16A34A 50%, #15803D 100%);
+}
+
+.widget-storage-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.widget-storage-addtag {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    margin-top: 9px;
+    margin-left: 4px;
+    border-radius: 34px;
+
+    background: transparent;
+    color: rgba(255, 255, 255, 0.75);
+
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.widget-storage-addtag:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+.widget-storage-addtag:active {
+    transform: scale(0.92);
+}
+
+.widget-card-nav {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 3px;
+    margin-top: 8px;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.widget-card-nav i {
+    font-size: 14px;
 }
