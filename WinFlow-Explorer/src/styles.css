@@ -233,9 +233,12 @@ body {
     justify-content: center;
 
     border: none;
-    border-radius: 11px;
+    border-radius: 17px;
+    padding: 1px 7px;
 
     background: transparent;
+    font-family: var(--font);
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.75);
 
     cursor: pointer;
@@ -840,7 +843,7 @@ i {
     -webkit-user-select: none;
     position: relative;
     color: white;
-    padding: 15px 20px;
+    padding: 9px 20px;
     box-sizing: border-box;
     box-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
 
@@ -1021,3 +1024,247 @@ i {
 .widget-card-nav i {
     font-size: 14px;
 }
+
+.widget-card-nav button {
+    width: 17px;
+    height: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    margin-top: 0px;
+    border-radius: 34px;
+
+    background: transparent;
+    color: rgba(255, 255, 255, 0.75);
+
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.widget-card-nav button:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+.widget-card-nav button:active {
+    transform: scale(0.92);
+}
+
+.tip-1 {
+    position: relative;
+}
+
+.tip-1::after {
+    content: attr(data-tip);
+
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 7px);
+
+    transform: translateX(-50%);
+
+    padding: 7px 10px;
+
+    background: rgba(255,255,255,.05);
+    backdrop-filter: blur(24px) saturate(10%);
+    -webkit-backdrop-filter: blur(24px) saturate(10%);
+
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 13px;
+
+    color: white;
+
+    font-family: var(--font);
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.tip-1:hover::after {
+    animation: tooltip-show .2s ease 0.8s forwards;
+}
+
+@keyframes tooltip-show {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.tip-2 {
+    position: relative;
+}
+
+.tip-2::after {
+    content: attr(data-tip);
+
+    position: absolute;
+    left: 50%;
+    top: calc(100% - 70px);
+
+    transform: translateX(-50%);
+
+    padding: 7px 10px;
+
+    background: rgba(255,255,255,.05);
+    backdrop-filter: blur(24px) saturate(10%);
+    -webkit-backdrop-filter: blur(24px) saturate(10%);
+
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 13px;
+
+    color: white;
+
+    font-family: var(--font);
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.tip-2:hover::after {
+    animation: tooltip-show .2s ease 0.8s forwards;
+}
+
+/* Menu anchor */
+.nav-menu-new {
+    position: relative;
+    display: inline-block;
+    z-index: 1000;
+}
+
+.nav-menu-new-popup {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+
+    min-width: 210px;
+    width: max-content;
+
+    padding: 7px;
+
+    background: rgba(255, 255, 255, 0.01);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 17px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+    box-sizing: border-box;
+
+    z-index: 1001;
+    pointer-events: auto;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px) scale(.98);
+
+    transform-origin: top left;
+
+    transition:
+        opacity .15s ease,
+        transform .15s ease,
+        visibility .15s ease;
+}
+
+.nav-menu-new[open] .nav-menu-new-popup {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.nav-menu-new-popup button,
+.nav-menu-new-popup .menu-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 30px;
+    min-height: 30px;
+
+    margin: 0;
+    padding: 0 10px;
+
+    gap: 10px;
+
+    box-sizing: border-box;
+
+    border: 0;
+    border-radius: 12px;
+
+    background: transparent;
+    color: rgba(255, 255, 255, .9);
+
+    font-family: var(--font);
+    font-size: 13px;
+
+    text-align: left;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    transition: background .12s ease;
+}
+
+.nav-menu-new-popup button:hover,
+.nav-menu-new-popup .menu-item:hover {
+    background: rgba(255, 255, 255, .08);
+}
+
+.nav-menu-new-popup i {
+    flex: 0 0 18px;
+
+    width: 18px;
+
+    font-size: 16px;
+    text-align: center;
+
+    opacity: .8;
+
+    pointer-events: none;
+}
+
+.nav-menu-new-popup .divider {
+    height: 1px;
+
+    margin: 5px 6px;
+
+    background: rgba(255, 255, 255, .08);
+
+    pointer-events: none;
+}
+
+/* https://stackoverflow.com/questions/2310734/how-to-make-html-text-unselectable */
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+

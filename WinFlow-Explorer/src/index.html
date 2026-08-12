@@ -51,23 +51,25 @@
       </div>
     </div>
     <center><div class="nav-bar-card">
-      <button class="nav-btn">
+      <button class="nav-btn tip-1" data-tip="View Previous">
       <i class="ph ph-caret-left" style="font-size: 15px;"></i>
       </button>
-      <button class="nav-btn">
+      <button class="nav-btn tip-1" data-tip="View Next">
       <i class="ph ph-caret-right" style="font-size: 15px;"></i>
       </button>
-      <button class="nav-btn">
+      <button class="nav-btn tip-1" data-tip="View Up">
       <i class="ph ph-arrow-up" style="font-size: 15px;"></i>
       </button>
-      <button class="nav-btn">
+      <button class="nav-btn tip-1" data-tip="Refresh">
       <i class="ph ph-arrow-clockwise" style="font-size: 15px;"></i>
       </button>
       <div class="path-bar">Shows the path - Development</div>
       <div class="search-bar">
         <input type="text" placeholder="Search Everything"/>
         <div style="margin-left:auto; display:flex; align-items:center; gap:8px;">
-          <button class="nav-btn"><i class="ph ph-magnifying-glass"></i></button>
+          <button class="nav-btn tip-1" data-tip="Search">
+            <i class="ph ph-magnifying-glass"></i>
+          </button>
         </div>
       </div>
     </div></center>
@@ -102,23 +104,42 @@
 
       <main class="file-area">
           <div class="toolbar">
-              <button class="nav-btn-actions"><i class="ph ph-plus-circle" style="font-size: 15px;"> </i> New <i class="ph-bold ph-caret-down" style="font-size: 10px;"></i></button>
+              <details class="nav-menu-new">
+                <summary class="nav-btn-actions unselectable">
+                  <i class="ph ph-plus-circle"> 
+                  </i> New
+                  <i class="ph-bold ph-caret-down" style="font-size: 10px;"></i>
+                </summary>
+                <div class="nav-menu-new-popup">
+                  <button>Folder</button>
+                  <button>Widget</button>
+                  <button>Shortcut</button>
+                  <button>Bitmap Image</button>
+                  <button>Microsoft PowerPoint Presentation</button>
+                  <button>Microsoft Word Document</button>
+                  <button>Microsoft Excel Spreadsheet</button>
+                  <button>Microsoft Access Database</button>
+                  <button>Rich Text Document</button>
+                  <button>Text Document</button>
+                  <button>Compressed Folder</button>
+                </div>
+              </details>
               <div class="divider-actions"></div>
-              <button class="nav-btn-actions"><i class="ph ph-scissors" style="font-size: 15px; transform: rotate(270deg);"></i></button>
-              <button class="nav-btn-actions"><i class="ph ph-copy" style="font-size: 15px;"></i></button>
-              <button class="nav-btn-actions"><i class="ph ph-clipboard" style="font-size: 15px;"></i></button>
-              <button class="nav-btn-actions"><i class="ph ph-textbox" style="font-size: 15px;"></i></button>
-              <button class="nav-btn-actions"><i class="ph ph-share" style="font-size: 15px;"></i></button>
-              <button class="nav-btn-actions"><i class="ph ph-trash-simple" style="font-size: 15px;"></i></button>
-              <button class="nav-btn-actions"><i class="ph ph-info" style="font-size: 15px;"></i></button>
-              <button class="nav-btn-actions"><i class="ph ph-cards-three" style="font-size: 15px;"></i></button>
+              <button class="nav-btn-actions tip-1" data-tip="Cut"><i class="ph ph-scissors" style="font-size: 15px; transform: rotate(270deg);"></i></button>
+              <button class="nav-btn-actions tip-1" data-tip="Copy"><i class="ph ph-copy" style="font-size: 15px;"></i></button>
+              <button class="nav-btn-actions tip-1" data-tip="Paste"><i class="ph ph-clipboard" style="font-size: 15px;"></i></button>
+              <button class="nav-btn-actions tip-1" data-tip="Rename"><i class="ph ph-textbox" style="font-size: 15px;"></i></button>
+              <button class="nav-btn-actions tip-1" data-tip="Share"><i class="ph ph-share" style="font-size: 15px;"></i></button>
+              <button class="nav-btn-actions tip-1" data-tip="Delete"><i class="ph ph-trash-simple" style="font-size: 15px;"></i></button>
+              <button class="nav-btn-actions tip-1" data-tip="Info"><i class="ph ph-info" style="font-size: 15px;"></i></button>
+              <button class="nav-btn-actions tip-1" data-tip="CollectZone"><i class="ph ph-cards-three" style="font-size: 15px;"></i></button>
               <div style="margin-left:auto; display:flex; align-items:center; gap:8px;">
-                <button class="nav-btn-actions"><i class="ph ph-arrows-down-up" style="font-size: 15px;"></i></button>
-                <button class="nav-btn-actions"><i class="ph ph-list" style="font-size: 15px;"></i></button>
-                <button class="nav-btn-actions"><i class="ph ph-square-split-horizontal" style="font-size: 15px;"></i></button>
-                <button class="nav-btn-actions"><i class="ph ph-push-pin" style="font-size: 15px;"></i></button>
-                <button class="nav-btn-actions"><i class="ph ph-square-half" style="font-size: 15px;"></i></button>
-                <button class="nav-btn-actions"><i class="ph ph-dots-three" style="font-size: 15px;"></i></button>
+                <button class="nav-btn-actions tip-1" data-tip="Sort by"><i class="ph ph-arrows-down-up" style="font-size: 15px;"></i></button>
+                <button class="nav-btn-actions tip-1" data-tip="List"><i class="ph ph-list" style="font-size: 15px;"></i></button>
+                <button class="nav-btn-actions tip-1" data-tip="Split View"><i class="ph ph-square-split-horizontal" style="font-size: 15px;"></i></button>
+                <button class="nav-btn-actions tip-1" data-tip="Pin"><i class="ph ph-push-pin" style="font-size: 15px;"></i></button>
+                <button class="nav-btn-actions tip-1" data-tip="Preview"><i class="ph ph-square-half" style="font-size: 15px;"></i></button>
+                <button class="nav-btn-actions tip-1" data-tip="More Options"><i class="ph ph-dots-three" style="font-size: 15px;"></i></button>
               </div>
           </div>
 

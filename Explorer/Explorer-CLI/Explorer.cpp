@@ -298,7 +298,7 @@ int main()
             // Just exit. No abort()
             return 0;
         }
-        else if (a == L"ls" || a == L"dir")
+        else if (a == L"lsa" || a == L"dira")
         {
             // Resources
             // https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-findfirstfileexw
@@ -336,12 +336,16 @@ int main()
             std::wcout << L"\n"; // Finally, print a newline for neatify
             FindClose(handle_file); // Finally, CLOSE the handle when done.
         }
-        else if(a == L"lsa") 
+        else if(a == L"ls" || a == L"dir") // TestModel1 
         {
-            // Usage: lsa                      -> list C:\ root
-            //        lsa C:\path              -> list any directory
-            //        lsa D:\                  -> list D:\ root
-            //        lsa [recordCount]         -> raw MFT scan
+            // Some Code Written By AI
+            // Mostly me.
+            // Tho, the resources are VERY big, so I will not list them here. 
+            // But they are from Microsoft Docs.
+            // Usage: ls                      -> list C:\ root
+            //        ls C:\path              -> list any directory
+            //        ls D:\                  -> list D:\ root
+            //        ls [recordCount]         -> raw MFT scan
             std::wstring listPath = L"C:\\";
             DWORD recordsToRead = 256;
             DWORD parentFilter = 5;
@@ -626,7 +630,7 @@ int main()
                 }
             }
         } 
-        else if (a == L"rmdir") 
+        else if (a == L"rmdir" || a == L"rm") 
         {
             // Resources
             // https://stackoverflow.com/questions/213392/what-is-the-win32-api-function-to-use-to-delete-a-folder
