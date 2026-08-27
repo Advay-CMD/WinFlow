@@ -1,0 +1,15 @@
+{
+    "color1": "linear-gradient(135deg, #FDBA74 0%, #FB923C 100%)",
+    "color2": "linear-gradient(135deg, #DC2626 0%, #B91C1C 50%, #991B1B 100%)",
+    "color3": "linear-gradient(135deg, #4ADE80 0%, #22C55E 50%, #10B981 100%)",
+    "color4": "linear-gradient(135deg, #22D3EE 0%, #06B6D4 50%, #0891B2 100%)",
+    "color5": "linear-gradient(135deg, #38BDF8 0%, #0EA5E9 100%)",
+    "color6": "linear-gradient(135deg, #60A5FA 0%, #3B82F6 50%, #2563EB 100%)",
+    "color7": "linear-gradient(135deg, #0EA5E9 0%, #2563EB 100%)",
+    "color8": "linear-gradient(135deg, #38BDF8 0%, #0EA5E9 50%, #0284C7 100%)",
+    "color9": "linear-gradient(135deg, #38BDF8 0%, #0EA5E9 50%, #0369A1 100%)",
+    "color10": "linear-gradient(135deg, #22D3EE 0%, #0EA5E9 50%, #0284C7 100%)",
+    "color11": "linear-gradient(135deg, #6366F1 0%, #4F46E5 100%)",
+    "color12": "linear-gradient(135deg, #38BDF8 0%, #6366F1 100%)",
+    "color13": "linear-gradient(135deg, #9333EA 0%, #7C3AED 50%, #6366F1 100%)"
+}

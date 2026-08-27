@@ -1,10 +1,29 @@
+/*-----------------------------------------*/
+/*        WinFlow Application Suite        */
+/*        Copyright: Advay-CMD             */
+/*        Do not distribute if not         */
+/*        Open-Source                      */
+/*-----------------------------------------*/
+
+/* TrueUI certified */
+/* TrueUI copyright: Advay-CMD */
+
+/* Certified: Easy to use, Beautiful UI, modifiable on go! */
+
+/* TO-DO */
+/* - Liquify a little components */
+/* - Make the UI more elegant sleek and modern */
+/* - Have more TrueUI certified components (more sleek elegant and up-to-date) */
+/* - If possible, try to make names and styles more clearer for a dev. Right now it is a spagetti! */
+/* ---- */
+
 html,
 body {
     margin: 0;
     height: 100%;
     overflow: hidden;
 
-    background:
+    /* background:
         radial-gradient(1400px 900px at 15% -10%,
             rgba(82, 118, 255, 0.1),
             transparent 70%),
@@ -14,14 +33,31 @@ body {
         radial-gradient(900px 700px at 50% 40%,
             rgba(255, 255, 255, 0.018),
             transparent 80%),
-        linear-gradient(180deg, #12131b 0%, #0d1017 40%, #090b11 100%);
+        linear-gradient(180deg, #12131b 0%, #0d1017 40%, #090b11 100%); */
+        background: #121212;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    /* Liquified components */
     --scrollbar-thumb: rgba(255, 255, 255, 0.25);
     --font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     --i-gradient: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #2563eb 100%);
+    --nav-bar-card-background: rgba(255, 255, 255, 0.04);
+    --nav-bar-card-border: 1px solid rgba(255, 255, 255, 0.05);
+    --tab-background: rgba(255, 255, 255, 0.04);
+    --tab-border: 1px solid rgba(255, 255, 255, 0.05);
+    --path-bar-bg: rgba(255, 255, 255, 0.04);
+    --path-bar-border: 1px solid rgba(255, 255, 255, 0.05);
+    --search-bar-bg: rgba(255, 255, 255, 0.04);
+    --search-bar-border: 1px solid rgba(255, 255, 255, 0.05);
+    --sidebar-item-bg: rgba(255, 255, 255, 0.04);
+    --sidebar-item-border: 1px solid rgba(255, 255, 255, 0.05);
+    --recent-card-bg: rgba(255, 255, 255, 0.04);
+    --recent-card-border: 1px solid rgba(255, 255, 255, 0.05);
+    --pinned-items-bg: rgba(255, 255, 255, 0.04);
+    --pinned-items-border: 1px solid rgba(255, 255, 255, 0.05);
+    --recents-bg: #3cade8;
   }
 }
 
@@ -85,7 +121,8 @@ body {
     font-size: 15px;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
+    border-radius: 999px;
+    corner-shape: squircle;
     gap: 8px;
 
     color: white;
@@ -96,7 +133,8 @@ body {
     font-family: var(--font);
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
+    border-radius: 30px;
+    corner-shape: squircle;
     overflow: auto;
     user-select: none;
     -webkit-user-select: none;
@@ -124,10 +162,11 @@ body {
     padding: 0 10px;
     padding-left: 20px;
 
-    border-radius: 34px;
+    border-radius: 50px;
+    corner-shape: squircle;
 
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--nav-bar-card-background);
+    border: var(--nav-bar-card-border);
 
     color: white;
 
@@ -148,10 +187,11 @@ body {
     padding: 0 14px;
     padding-left: 20px;
 
-    border-radius: 20px;
+    border-radius: 100px;
+    /*corner-shape: squircle;*/
 
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--path-bar-bg);
+    border: var(--path-bar-border);
 
     color: white;
 
@@ -174,8 +214,8 @@ body {
 
     border-radius: 20px;
 
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--search-bar-bg);
+    border: var(--search-bar-border);
 
     color: white;
 
@@ -205,7 +245,9 @@ body {
     justify-content: center;
 
     border: none;
-    border-radius: 7px;
+    border-radius: 999px;
+
+    corner-shape: squircle;
 
     background: transparent;
     color: rgba(255, 255, 255, 0.75);
@@ -233,8 +275,9 @@ body {
     justify-content: center;
 
     border: none;
-    border-radius: 17px;
-    padding: 1px 7px;
+    border-radius: 999px;
+    corner-shape: squircle;
+    padding: 0px 7px;
 
     background: transparent;
     font-family: var(--font);
@@ -288,9 +331,10 @@ body {
     padding: 0 12px;
 
     border-radius: 20px;
+    corner-shape: squircle;
 
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--tab-background);
+    border: var(--tab-border);
 
     color: white;
 
@@ -481,9 +525,10 @@ i {
     font-family: var(--font);
     font-size: 13px;
 
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 13px;
+    background: var(--sidebar-item-bg);
+    border: var(--sidebar-item-border);
+    border-radius: 999px;
+    corner-shape: squircle;
 
     gap: 8px;
     color: white;
@@ -521,7 +566,8 @@ i {
 
     padding: 0 12px;
 
-    border-radius: 10px;
+    border-radius: 999px;
+    corner-shape: squircle;
 
     color: rgba(255, 255, 255, 0.75);
     font-family: var(--font);
@@ -606,12 +652,12 @@ i {
 
     border: none;
     outline: none;
-    background: #3cade8;
+    background: var(--recents-bg);
 
     border-radius: 20px;
 
     color: black;
-    font-family: "Segoe UI", sans-serif;
+    font-family: var(--font);
     font-size: 14px;
     gap: 8px;
 
@@ -658,9 +704,10 @@ i {
     flex: none;
 
     font-family: var(--font);
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
+    background: var(--recent-card-bg);
+    border: var(--recent-card-border);
+    border-radius: 25px;
+    corner-shape: squircle;
     user-select: none;
     -webkit-user-select: none;
     position: relative;
@@ -785,8 +832,8 @@ i {
     flex: none;
 
     font-family: var(--font);
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--pinned-items-bg);
+    border: var(--pinned-items-border);
     border-radius: 15px;
     user-select: none;
     -webkit-user-select: none;
@@ -838,7 +885,8 @@ i {
     font-family: var(--font);
     background: rgba(255,255,255,.04);
     border: 1px solid rgba(255,255,255,.05);
-    border-radius: 15px;
+    border-radius: 25px;
+    corner-shape: squircle;
     user-select: none;
     -webkit-user-select: none;
     position: relative;
@@ -1268,4 +1316,70 @@ i {
     user-select: none;
 }
 
+.disk-card {
+    width: 260px;
+    min-height: 40px;
+    flex: none;
 
+    font-family: var(--font);
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.05);
+    border-radius: 25px;
+    corner-shape: squircle;
+    user-select: none;
+    -webkit-user-select: none;
+    position: relative;
+    color: white;
+    padding: 9px 20px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s cubic-bezier(.4, 0, .2, 1);
+}
+
+.disk-card-storage-drive-bar{
+    display: flex;
+    width: calc(100% - 10px);
+    height: 8px;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-left: 8px;
+    margin-bottom: 0px;
+    margin-top: 3px;
+    background: rgba(255,255,255,.08);
+}
+
+.disk-card-storage-drive-bar-used {
+    width: 70%;
+    background: linear-gradient(135deg, #5CCBFF 0%, #1677D2 100%);
+}
+
+.disk-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.disk-free-storage-left {
+    font-family: var(--font);
+    font-size: 10px;
+    margin-left: 95px;
+    color: grey;
+}
+
+.widget-card-span-head {
+    font-size: 14px; 
+    margin-bottom: 10px; 
+    align-self: center; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    max-width: 190px;
+}
+
+.widget-card-span-head i {
+    font-size: 14px; 
+    margin-right: 10px;
+}
